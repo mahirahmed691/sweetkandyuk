@@ -24,7 +24,7 @@ export default function OrderPage() {
           <dl className="mt-12 space-y-8">
             <div>
               <dt className="text-[0.7rem] uppercase tracking-[0.18em] text-ink/45">Local</dt>
-              <dd className="mt-2 text-xl leading-snug">Free around London. Drop your area and we will say yes or give you a time.</dd>
+              <dd className="mt-2 text-xl leading-snug">Free around Birmingham. Drop your area and we will say yes or give you a time.</dd>
             </div>
             <div>
               <dt className="text-[0.7rem] uppercase tracking-[0.18em] text-ink/45">Nationwide</dt>

@@ -18,7 +18,7 @@ export const products: Product[] = [
     tag: "House pouch",
     blurb: "Cola bottles, foam strawberries, peaches, fried eggs. The scoop we pack without thinking.",
     detail:
-      "The house mix from the London counter. Soft foam, chewy bottles, a little sour, a little creamy. The pouch people reorder.",
+      "The house mix from the Birmingham counter. Soft foam, chewy bottles, a little sour, a little creamy. The pouch people reorder.",
     image: "/images/mix/bright-mix.jpg",
   },
   {

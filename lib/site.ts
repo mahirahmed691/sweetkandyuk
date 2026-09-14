@@ -2,10 +2,10 @@ export const site = {
   name: "Sweet Kandy",
   handle: "@sweetkandyuk",
   instagram: "https://www.instagram.com/sweetkandyuk/",
-  city: "London",
+  city: "Birmingham",
   tagline: "Halal mix. Proper pouches.",
   description:
-    "London pick and mix, scooped into matte black pouches. Halal mixed sweets, free local delivery, nationwide in the post.",
+    "Birmingham pick and mix, scooped into matte black pouches. Halal mixed sweets, free local delivery, nationwide in the post.",
 };
 
 export const nav = [

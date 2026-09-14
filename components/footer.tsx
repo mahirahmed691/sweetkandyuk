@@ -10,7 +10,7 @@ export function Footer() {
           <div className="md:col-span-6">
             <Logo invert />
             <p className="mt-6 max-w-[34ch] text-lg leading-relaxed text-sugar/70">
-              {site.tagline} Scooped in London, sealed in black, sent to your door.
+              {site.tagline} Scooped in {site.city}, sealed in black, sent to your door.
             </p>
           </div>
           <div className="flex flex-col gap-3 md:col-span-3">
@@ -36,7 +36,7 @@ export function Footer() {
               Instagram {site.handle}
             </a>
             <p className="text-lg text-sugar/70">Halal mixed sweets</p>
-            <p className="text-lg text-sugar/70">Free local delivery, London</p>
+            <p className="text-lg text-sugar/70">Free local delivery, {site.city}</p>
           </div>
         </div>
         <div className="flex flex-col justify-between gap-3 border-t border-white/10 pt-8 text-sm text-sugar/45 md:flex-row">

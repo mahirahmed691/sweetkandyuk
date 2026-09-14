@@ -6,7 +6,7 @@ import { products } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "Pouches",
-  description: "Classic, sour, American, kilo, gift box, or a build-your-own London pick and mix. Halal pouches.",
+  description: "Classic, sour, American, kilo, gift box, or a build-your-own Birmingham pick and mix. Halal pouches.",
 };
 
 export default function PouchesPage() {
@@ -19,7 +19,7 @@ export default function PouchesPage() {
             Pouches, kilos, boxes.
           </h1>
           <p className="mt-6 max-w-[48ch] text-lg leading-relaxed text-ink-soft">
-            London pick and mix, packed to order. Every pouch is halal. You see the sweets: cola bottles, cherries, sour worms, apple pencils. No lucky dips.
+            Birmingham pick and mix, packed to order. Every pouch is halal. You see the sweets: cola bottles, cherries, sour worms, apple pencils. No lucky dips.
           </p>
         </Reveal>
 

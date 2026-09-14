@@ -107,7 +107,7 @@ export function OrderForm() {
             value={area}
             onChange={(event) => setArea(event.target.value)}
             className="field"
-            placeholder="E14 or Tower Hamlets"
+            placeholder="B12 or Small Heath"
           />
         </Field>
         <div className="grid gap-6 md:grid-cols-2">

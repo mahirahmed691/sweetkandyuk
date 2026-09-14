@@ -41,7 +41,7 @@ export default function AboutPage() {
           <Reveal className="flex min-w-0 flex-col justify-center md:col-span-5 md:col-start-8" delay={120}>
             <Logo />
             <p className="mt-8 max-w-[44ch] text-lg leading-relaxed text-ink-soft">
-              Sweet Kandy started on Instagram in London: pick and mix, American candy, free local drops, nationwide in the post. The sweets were right. Cola bottles, cherries, apple pencils, sour worms. The rainbow lollipop badge was not.
+              Sweet Kandy started on Instagram in Birmingham: pick and mix, American candy, free local drops, nationwide in the post. The sweets were right. Cola bottles, cherries, apple pencils, sour worms. The rainbow lollipop badge was not.
             </p>
             <p className="mt-5 max-w-[44ch] text-lg leading-relaxed text-ink-soft">
               The rebrand keeps the K in Kandy and throws out the circus. The mark is the pouch: a zip, a window, three sweets. You see the mix before you open it. Halal is printed as a fact, not a sticker afterthought.

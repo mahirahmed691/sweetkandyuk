@@ -32,7 +32,7 @@ const ritual = [
   {
     n: "02",
     title: "Drop your area",
-    text: "London is free. Further out goes in the post. We confirm on Instagram.",
+    text: "Birmingham is free. Further out goes in the post. We confirm on Instagram.",
   },
   {
     n: "03",
@@ -58,7 +58,7 @@ export default function Home() {
                 <span className="text-cherry">Proper pouches.</span>
               </h1>
               <p className="mt-8 max-w-[min(42ch,100%)] text-lg leading-relaxed text-ink-soft md:text-xl">
-                London pick and mix, scooped into matte black pouches. Cola bottles, cherries, sour worms, apple pencils. Halal. Local drops. Nationwide in the post.
+                Birmingham pick and mix, scooped into matte black pouches. Cola bottles, cherries, sour worms, apple pencils. Halal. Local drops. Nationwide in the post.
               </p>
               <div className="mt-10 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
                 <CtaLink href="/pouches">Shop pouches</CtaLink>
@@ -248,7 +248,7 @@ export default function Home() {
           <Reveal>
             <p className="text-[0.7rem] uppercase tracking-[0.22em] text-sugar/70">The drop</p>
             <h2 className="mt-4 max-w-[14ch] font-display text-[clamp(3rem,8vw,7rem)] font-extrabold leading-[0.86] tracking-[-0.07em]">
-              Free local in London. Nationwide in the post.
+              Free local in Birmingham. Nationwide in the post.
             </h2>
           </Reveal>
           <Reveal delay={100}>
