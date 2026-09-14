@@ -32,6 +32,7 @@ export default function AboutPage() {
                   src="/images/sweet-kandy-logo.png"
                   alt="Sweet Kandy wordmark and pouch mark on cream paper"
                   fill
+                  quality={90}
                   className="object-contain p-6 md:p-10"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />

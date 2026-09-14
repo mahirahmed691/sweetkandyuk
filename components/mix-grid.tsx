@@ -37,6 +37,7 @@ export function MixGrid() {
                   src={sweet.image}
                   alt={sweet.name}
                   fill
+                  quality={90}
                   className="object-cover"
                   sizes="(max-width: 768px) 50vw, 40vw"
                 />

@@ -76,6 +76,7 @@ export default function Home() {
                     alt="Sweet Kandy classic mix pouch standing on sugar paper, sweets visible through the window"
                     fill
                     priority
+                    quality={90}
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 40vw"
                   />
@@ -143,6 +144,7 @@ export default function Home() {
                           src={product.image}
                           alt={product.name}
                           fill
+                          quality={90}
                           className="object-cover transition-transform duration-700 ease-spring group-hover:scale-[1.03]"
                           sizes="(max-width: 768px) 100vw, 50vw"
                         />
@@ -185,6 +187,7 @@ export default function Home() {
                   src="/images/sweets-spill.png"
                   alt="Mixed gummy sweets spilling from a torn black pouch"
                   fill
+                  quality={90}
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 60vw"
                 />

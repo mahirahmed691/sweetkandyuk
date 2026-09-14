@@ -36,6 +36,7 @@ export default function PouchesPage() {
                           src={product.image}
                           alt={`${product.name} by Sweet Kandy`}
                           fill
+                          quality={90}
                           className="object-cover"
                           sizes="(max-width: 768px) 100vw, 50vw"
                         />
