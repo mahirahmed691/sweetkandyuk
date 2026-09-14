@@ -2,6 +2,7 @@ export const site = {
   name: "Sweet Kandy",
   handle: "@sweetkandyuk",
   instagram: "https://www.instagram.com/sweetkandyuk/",
+  url: "https://www.sweetkandyuk.co.uk",
   city: "Birmingham",
   tagline: "Halal mix. Proper pouches.",
   description:
@@ -10,6 +11,7 @@ export const site = {
 
 export const nav = [
   { href: "/pouches", label: "Pouches" },
+  { href: "/mix", label: "Mix" },
   { href: "/about", label: "About" },
   { href: "/order", label: "Order" },
 ] as const;

@@ -106,6 +106,9 @@ export default function Home() {
           </Reveal>
           <Reveal className="md:col-span-12" delay={80}>
             <MixGrid />
+            <div className="mt-10">
+              <CtaLink href="/mix">Build your pouch</CtaLink>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -135,7 +138,7 @@ export default function Home() {
                   delay={index * 80}
                   className={wide ? "md:col-span-7" : "md:col-span-5"}
                 >
-                  <Link href="/pouches" className="group block">
+                  <Link href={`/pouches#${product.slug}`} className="group block">
                     <div className="bezel">
                       <div
                         className={`bezel-inner relative ${wide ? "aspect-[4/3] md:aspect-[16/10]" : "aspect-square"} bg-sugar-deep`}
@@ -220,6 +223,14 @@ export default function Home() {
                 </div>
               </Reveal>
             ))}
+          </div>
+          <div className="mt-8">
+            <Link
+              href="/drop"
+              className="text-sm font-medium text-cherry transition-colors duration-500 hover:text-cherry-hot"
+            >
+              Delivery, halal, allergies
+            </Link>
           </div>
         </div>
       </section>

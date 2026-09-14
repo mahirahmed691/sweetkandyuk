@@ -5,7 +5,7 @@ import { cn } from "@/lib/cn";
 type CtaLinkProps = {
   href: string;
   children: React.ReactNode;
-  variant?: "cherry" | "ink" | "ghost";
+  variant?: "cherry" | "ink" | "ghost" | "ghostOnDark";
   className?: string;
   external?: boolean;
 };
@@ -22,6 +22,8 @@ export function CtaLink({
     ink: "bg-ink text-sugar hover:bg-pouch",
     ghost:
       "bg-transparent text-ink ring-1 ring-ink/12 hover:bg-ink/[0.04] hover:ring-ink/20",
+    ghostOnDark:
+      "bg-transparent text-sugar ring-1 ring-white/15 hover:bg-white/8 hover:ring-white/25",
   }[variant];
 
   return (

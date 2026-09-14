@@ -5,17 +5,41 @@ import { useState } from "react";
 import { ArrowUpRight, Check } from "@phosphor-icons/react";
 import { products } from "@/lib/products";
 import { site } from "@/lib/site";
+import { mixLabel, parseMixParam } from "@/lib/sweets";
 
 type Status = "idle" | "copied" | "error";
 
+async function copyText(value: string) {
+  try {
+    await navigator.clipboard.writeText(value);
+    return true;
+  } catch {
+    const area = document.createElement("textarea");
+    area.value = value;
+    area.setAttribute("readonly", "");
+    area.style.position = "fixed";
+    area.style.left = "-9999px";
+    document.body.appendChild(area);
+    area.select();
+    const ok = document.execCommand("copy");
+    area.remove();
+    return ok;
+  }
+}
+
 export function OrderForm() {
   const searchParams = useSearchParams();
+  const mixSlugs = parseMixParam(searchParams.get("sweets"));
+  const mixNames = mixLabel(mixSlugs);
   const requested = products.find((item) => item.slug === searchParams.get("pouch"));
   const [name, setName] = useState("");
   const [area, setArea] = useState("");
-  const [product, setProduct] = useState(requested?.name ?? products[0].name);
+  const [product, setProduct] = useState(
+    mixSlugs.length ? "Build-a-Pouch" : (requested?.name ?? products[0].name),
+  );
   const [quantity, setQuantity] = useState("1");
-  const [notes, setNotes] = useState("");
+  const [notes, setNotes] = useState(mixNames ? `Mix: ${mixNames}` : "");
+  const [gift, setGift] = useState(false);
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState("");
 
@@ -25,6 +49,7 @@ export function OrderForm() {
       `${product} x${quantity}`,
       `Name: ${name.trim()}`,
       `Area: ${area.trim()}`,
+      gift ? "This is a gift. Keep receipts out of the bag." : null,
       notes.trim() ? `Notes: ${notes.trim()}` : null,
     ]
       .filter(Boolean)
@@ -42,7 +67,7 @@ export function OrderForm() {
     setMessage(nextMessage);
 
     try {
-      await navigator.clipboard.writeText(nextMessage);
+      await copyText(nextMessage);
       setStatus("copied");
     } catch {
       setStatus("copied");
@@ -65,17 +90,26 @@ export function OrderForm() {
           <pre className="mt-6 overflow-x-auto rounded-2xl bg-pouch px-5 py-4 font-body text-sm leading-relaxed text-sugar/90">
             {message}
           </pre>
-          <a
-            href={site.instagram}
-            target="_blank"
-            rel="noreferrer"
-            className="group mt-8 inline-flex items-center gap-3 rounded-full bg-cherry py-2.5 pl-6 pr-2 text-sugar transition-all duration-700 ease-spring hover:bg-cherry-hot active:scale-[0.98]"
-          >
-            Open Instagram
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-black/10 transition-transform duration-700 ease-spring group-hover:translate-x-0.5 group-hover:-translate-y-px">
-              <ArrowUpRight size={16} weight="light" />
-            </span>
-          </a>
+          <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+            <a
+              href={site.instagram}
+              target="_blank"
+              rel="noreferrer"
+              className="group inline-flex items-center gap-3 rounded-full bg-cherry py-2.5 pl-6 pr-2 text-sugar transition-all duration-700 ease-spring hover:bg-cherry-hot active:scale-[0.98]"
+            >
+              Open Instagram
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-black/10 transition-transform duration-700 ease-spring group-hover:translate-x-0.5 group-hover:-translate-y-px">
+                <ArrowUpRight size={16} weight="light" />
+              </span>
+            </a>
+            <button
+              type="button"
+              onClick={() => copyText(message)}
+              className="text-sm text-ink/55 underline decoration-ink/20 underline-offset-4 transition-colors duration-500 hover:text-ink"
+            >
+              Copy again
+            </button>
+          </div>
         </div>
       </div>
     );
@@ -84,6 +118,11 @@ export function OrderForm() {
   return (
     <form onSubmit={onSubmit} className="rounded-[2rem] bg-ink/[0.04] p-2 ring-1 ring-ink/8">
       <div className="grid gap-6 rounded-[calc(2rem-0.5rem)] bg-sugar px-5 py-8 md:px-8 md:py-10">
+        {mixNames ? (
+          <p className="rounded-2xl bg-gold/25 px-4 py-3 text-sm leading-relaxed text-ink/80">
+            Mix locked from the counter: {mixNames}.
+          </p>
+        ) : null}
         <Field label="Your name" htmlFor="name">
           <input
             id="name"
@@ -154,6 +193,20 @@ export function OrderForm() {
             placeholder="Extra sour, skip the milk bottles"
           />
         </Field>
+        <label htmlFor="gift" className="flex items-start gap-3">
+          <input
+            id="gift"
+            name="gift"
+            type="checkbox"
+            checked={gift}
+            onChange={(event) => setGift(event.target.checked)}
+            className="mt-1 h-4 w-4 accent-cherry"
+          />
+          <span>
+            <span className="block text-sm font-medium text-ink">This is a gift</span>
+            <span className="text-sm text-ink/50">We keep the receipt out of the bag.</span>
+          </span>
+        </label>
         {status === "error" ? (
           <p className="text-sm text-cherry">Add your name and area so we know where the pouch is going.</p>
         ) : null}

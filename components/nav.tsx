@@ -13,10 +13,6 @@ export function Nav() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
@@ -106,10 +102,11 @@ export function Nav() {
           aria-label="Mobile"
           className="flex min-h-[100dvh] flex-col justify-end gap-2 px-6 pb-16 pt-32"
         >
-          {nav.map((item, index) => (
-            <Link
-              key={item.href}
-              href={item.href}
+            {nav.map((item, index) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
               className={cn(
                 "font-display text-5xl font-extrabold tracking-[-0.05em] text-sugar transition-all duration-700 ease-spring",
                 open ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0",
@@ -123,6 +120,7 @@ export function Nav() {
             href={site.instagram}
             target="_blank"
             rel="noreferrer"
+            onClick={() => setOpen(false)}
             className={cn(
               "mt-6 text-sm uppercase tracking-[0.22em] text-sugar/70 transition-all duration-700 ease-spring",
               open ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0",

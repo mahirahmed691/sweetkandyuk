@@ -1,21 +1,7 @@
 import Image from "next/image";
-import { sweets } from "@/lib/sweets";
+import Link from "next/link";
 import { Reveal } from "@/components/reveal";
-
-const spans = [
-  "md:col-span-6 md:row-span-2",
-  "md:col-span-3",
-  "md:col-span-3",
-  "md:col-span-6",
-  "md:col-span-4",
-  "md:col-span-4",
-  "md:col-span-4",
-  "md:col-span-3",
-  "md:col-span-6",
-  "md:col-span-3",
-  "md:col-span-6",
-  "md:col-span-6",
-];
+import { mixSpans, sweets } from "@/lib/sweets";
 
 export function MixGrid() {
   return (
@@ -24,9 +10,9 @@ export function MixGrid() {
         <Reveal
           key={sweet.slug}
           delay={index * 40}
-          className={`min-w-0 ${spans[index] ?? "md:col-span-3"}`}
+          className={`min-w-0 ${mixSpans[index] ?? "md:col-span-3"}`}
         >
-          <figure>
+          <Link href={`/mix?add=${sweet.slug}`} className="group block">
             <div className="bezel">
               <div
                 className={`bezel-inner relative ${
@@ -38,13 +24,18 @@ export function MixGrid() {
                   alt={sweet.name}
                   fill
                   quality={90}
-                  className="object-cover"
+                  className="object-cover transition-transform duration-700 ease-spring group-hover:scale-[1.03]"
                   sizes="(max-width: 768px) 50vw, 40vw"
                 />
               </div>
             </div>
-            <figcaption className="px-1 pt-3 text-sm text-ink/60">{sweet.name}</figcaption>
-          </figure>
+            <span className="mt-3 flex items-baseline justify-between gap-2 px-1">
+              <span className="text-sm text-ink/60">{sweet.name}</span>
+              <span className="text-[0.65rem] uppercase tracking-[0.16em] text-ink/30 transition-colors duration-500 group-hover:text-cherry">
+                Add
+              </span>
+            </span>
+          </Link>
         </Reveal>
       ))}
     </div>

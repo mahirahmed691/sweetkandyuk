@@ -7,7 +7,7 @@ export default function NotFound() {
       <div className="mx-auto w-full max-w-[1400px]">
         <p className="text-[0.7rem] uppercase tracking-[0.22em] text-ink/50">404</p>
         <h1 className="mt-4 max-w-[12ch] font-display text-[clamp(3rem,8vw,7rem)] font-extrabold leading-[0.86] tracking-[-0.07em]">
-          That pouch isn't here.
+          That pouch is not here.
         </h1>
         <p className="mt-6 max-w-[40ch] text-lg text-ink-soft">
           The mix you wanted wandered off. Back to the counter.

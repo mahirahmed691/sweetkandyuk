@@ -35,6 +35,9 @@ export function Footer() {
             >
               Instagram {site.handle}
             </a>
+            <Link href="/drop" className="text-lg text-sugar/85 transition-colors duration-500 hover:text-gold">
+              The drop
+            </Link>
             <p className="text-lg text-sugar/70">Halal mixed sweets</p>
             <p className="text-lg text-sugar/70">Free local delivery, {site.city}</p>
           </div>

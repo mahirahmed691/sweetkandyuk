@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { CtaLink } from "@/components/cta-link";
 import { OrderForm } from "@/components/order-form";
 import { Reveal } from "@/components/reveal";
 import { site } from "@/lib/site";
@@ -19,7 +20,7 @@ export default function OrderPage() {
             Tell us the pouch. We scoop it.
           </h1>
           <p className="mt-6 max-w-[min(42ch,100%)] text-lg leading-relaxed text-ink-soft">
-            Fill this in, we copy a message, you paste it to {site.handle}. That is how Sweet Kandy already sells. The site just writes the note for you.
+            Fill this in, we copy a message, you paste it to {site.handle}. That is how Sweet Kandy already sells. The site just writes the note for you. Prefer to pick the sweets first? Build a pouch, then come back here with the mix filled in.
           </p>
           <dl className="mt-12 space-y-8">
             <div>
@@ -35,6 +36,11 @@ export default function OrderPage() {
               <dd className="mt-2 text-xl leading-snug">Put them in the notes. Mixed sweets share scoops, so tell us what cannot go in.</dd>
             </div>
           </dl>
+          <div className="mt-10">
+            <CtaLink href="/mix" variant="ghost">
+              Build a pouch first
+            </CtaLink>
+          </div>
         </Reveal>
         <Reveal className="md:col-span-6 md:col-start-7" delay={80}>
           <Suspense fallback={<div className="h-[36rem] rounded-[2rem] bg-ink/[0.04] ring-1 ring-ink/8" />}>

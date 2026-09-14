@@ -28,7 +28,10 @@ export default function PouchesPage() {
             const flip = index % 2 === 1;
             return (
               <Reveal key={product.slug} delay={40}>
-                <article className="grid items-center gap-8 md:grid-cols-12 md:gap-10">
+                <article
+                  id={product.slug}
+                  className="grid scroll-mt-32 items-center gap-8 md:grid-cols-12 md:gap-10"
+                >
                   <div className={flip ? "md:col-span-6 md:order-2" : "md:col-span-6"}>
                     <div className="bezel">
                       <div className="bezel-inner relative aspect-[4/5] bg-sugar-deep md:aspect-square">
@@ -56,7 +59,9 @@ export default function PouchesPage() {
                     </p>
                     <p className="mt-6 max-w-[min(42ch,100%)] text-lg leading-relaxed text-ink-soft">{product.detail}</p>
                     <div className="mt-8">
-                      <CtaLink href={`/order?pouch=${product.slug}`}>Order this pouch</CtaLink>
+                      <CtaLink href={product.slug === "build" ? "/mix" : `/order?pouch=${product.slug}`}>
+                        {product.slug === "build" ? "Build this pouch" : "Order this pouch"}
+                      </CtaLink>
                     </div>
                   </div>
                 </article>

@@ -80,7 +80,12 @@ export default function AboutPage() {
               <h2 className="max-w-[16ch] font-display text-[clamp(2.4rem,5vw,4.4rem)] font-extrabold leading-[0.92] tracking-[-0.05em]">
                 Want a pouch on the table tonight?
               </h2>
-              <CtaLink href="/order">Order the mix</CtaLink>
+              <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+                <CtaLink href="/order">Order the mix</CtaLink>
+                <CtaLink href="/drop" variant="ghost">
+                  The drop
+                </CtaLink>
+              </div>
             </div>
           </Reveal>
         </div>
